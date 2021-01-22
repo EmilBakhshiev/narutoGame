@@ -1,4 +1,11 @@
-ninjaDataOne =  {
+import Character from './Character.js';
+import Attacks from './Attacks.js';
+import {ninja} from './ninja.js';
+
+const playground = document.querySelector('.playground');
+const randomButton = document.querySelector('#randomCharacters')
+
+ const ninjaDataOne =  {
   name: 'Naruto',
   type: 'unknown',
   hp: 564,
@@ -31,7 +38,7 @@ ninjaDataOne =  {
   ]
 }
 
-nanjaDataTwo = {
+const nanjaDataTwo = {
   img: 'https://res.cloudinary.com/digaox5o1/image/upload/v1611014890/gaara_pnzqeo.png',
   name: 'Gaara',
   type: 'unknown',
@@ -63,4 +70,24 @@ nanjaDataTwo = {
       }
   ]
 }
+
+
+function randomCharacter(ninja){
+   const randomValue = ninja[Math.floor(ninja.length * Math.random())];
+   return randomValue;
+}
+
+  const character = new Character(randomCharacter(ninja), '#hero');
+  const characterCard = character.renderCharacterCard();
+playground.prepend(characterCard);
+
+  const enemy = new Character(randomCharacter(ninja), '#enemy');
+  const enemyCard = enemy.renderCharacterCard();
+  playground.append(enemyCard);
+
+/*
+const heroAttack = new Attacks(ninjaDataOne, '#hero')
+const buttonAttack = heroAttack.renderAttacks();
+playground.prepend(buttonAttack);*/
+
 
