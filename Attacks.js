@@ -16,7 +16,8 @@ export default class Attacks{
         return Math.floor(Math.random() * (this._maxCharacterDamage - this._minCharacterDamage) + this._minCharacterDamage);  
     }
 
-    attackHero(){
+    attackHero(figher){
         return this._enemyHelthAfterAttack  =  this._healthEnemy - this._damage;
+        console.log(this._enemyHelthAfterAttack);
     }
 }

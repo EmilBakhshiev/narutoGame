@@ -1,13 +1,12 @@
 
 export default class Character {
-    constructor(data, sideFight, attackHero) {
+    constructor(data, sideFight) {
         this._name = data.name;
         this.health = data.hp;
         this.healthAfterAttack = data.hp;
         this._img = data.img;
         this._attacks = data.attacks;
         this._sideFight = sideFight;
-        this._attackHero = attackHero;
     }
     _getTemplate() {
         const newFighter = document
@@ -19,7 +18,7 @@ export default class Character {
     }
     renderCharacterCard() {
         this._element = this._getTemplate();
-        this._setEventListeners();
+       // this._setEventListeners();
         this._element.querySelector('.card__name').textContent = this._name;
         const cardImage = this._element.querySelector('.card__image');
         cardImage.src = this._img;
@@ -38,11 +37,7 @@ export default class Character {
 
         )
     }
-    damageforEnemy(attackHero) {
-        let hp = this._element.querySelector('#basisHealth');
-        return hp.textContent = attackHero;
-
-        
-
+    getRandomDamage(){
+        return Math.floor(Math.random() * (this._attacks[0].maxDamage - this._attacks[0].minDamage) + this._attacks[0].maxDamage);  
     }
 }
