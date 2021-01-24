@@ -30,7 +30,7 @@
 
 
     <template id="hero">
-        <figure class="card card--normal character" id="hero">
+        <figure class="card card--normal character">
             <div class="card__image-container">
                 <img src="https://res.cloudinary.com/digaox5o1/image/upload/v1611014924/naruto_jrwlvd.png" alt="naruto"
                     class="card__image">
@@ -59,15 +59,14 @@
                     <div class="hp__bar">
                         <div class="health" id="progressbar-character" style="width: 100%;"></div>
                     </div>
-                    <span class="hp__text" id="health-character">100 / 100</span>
+                    <span class="hp__text" id="health-character"> <span class="healthAfterDamage">100</span> / 100</span>
                 </div>
 
             </figcaption>
         </figure>
 
         <div class="control">
-            <button class="button" id="btn-kick">
-                Rasengan
+            <button class="button" id="btn-kick"> 
             </button>
         </div>
     </template>
