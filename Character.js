@@ -1,3 +1,4 @@
+
 export default class Character {
     constructor(data, sideFight, attackHero) {
         this._name = data.name;
@@ -6,6 +7,7 @@ export default class Character {
         this._img = data.img;
         this._attacks = data.attacks;
         this._sideFight = sideFight;
+        this._attackHero = attackHero;
     }
     _getTemplate() {
         const newFighter = document
@@ -39,6 +41,7 @@ export default class Character {
     damageforEnemy(attackHero) {
         let hp = this._element.querySelector('#basisHealth');
         return hp.textContent = attackHero;
+
         
 
     }

@@ -11,20 +11,20 @@ function randomCharacter(ninja){
    return randomValue;
 }
 
-  const character = new Character(randomCharacter(ninja), '#hero');
+
+  const character = new Character(randomCharacter(ninja), '#hero', test);
   const characterCard = character.renderCharacterCard();
-  let buttonAtack = character.renderCharacterCard().querySelector('.button');
+  let buttonAtack = characterCard.querySelector('.button');
   playground.prepend(characterCard);
 
-  const enemy = new Character(randomCharacter(ninja), '#enemy');
+  const enemy = new Character(randomCharacter(ninja), '#enemy', test);
   const enemyCard = enemy.renderCharacterCard();
-  let hpEnemy = enemy.renderCharacterCard().querySelector('#basisHealth');
+  let hpEnemy = enemyCard.querySelector('#basisHealth');
   playground.append(enemyCard);
-
   const attack = new Attacks(character, enemy);
-  buttonAtack.addEventListener('click', ()=>{
-    hpEnemy.textContent = character.damageforEnemy(attack.attackHero(enemy));
-  })
 
+function test (){
+  return attack.attackHero(enemy);
+}
 
-
+console.log(test());
